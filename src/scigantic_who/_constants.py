@@ -15,7 +15,7 @@ SOURCE_ENV = "SCIGANTIC_WHO_PATH"
 MOUNT_ENV = "SCIGANTIC_MOUNT_PATH"
 DEFAULT_MOUNTS = ("/mnt/archive", "/home/jovyan/archive")
 
-USER_AGENT = "scigantic-who/0.1.0 (+https://github.com/Scigantic/scigantic-who)"
+USER_AGENT = "scigantic-who/0.1.1 (+https://github.com/Scigantic/scigantic-who)"
 
 # The observation schema, identical in the mirror's parquet files and in what
 # live.fetch() returns. These are the OData entity's own property names.

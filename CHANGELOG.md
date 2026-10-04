@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1
+
+- Fix: inside a Jupyter kernel without ipywidgets, DuckDB rejects
+  `SET enable_progress_bar=false` and every call failed with
+  InvalidInputException. The setting is now best-effort. Found on the first
+  launch in a Scigantic notebook (the minimal image has no ipywidgets).
+
 ## 0.1.0
 
 First release.

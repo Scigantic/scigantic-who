@@ -15,7 +15,7 @@ from .catalog import countries, dimension_values, dimensions, indicators
 from .connection import connect, manifest, query, resolve_source
 from .data import data, decode
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "ALL_AGES_CODES",

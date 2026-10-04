@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scigantic-who"
-version = "0.1.0"
+version = "0.1.1"
 description = "Query every WHO Global Health Observatory indicator from a public parquet mirror over DuckDB (one query instead of 3,099 API calls), decode WHO's dimension codes, or fetch a fresh indicator from the live OData API in the same shape."
 readme = "README.md"
 requires-python = ">=3.10"

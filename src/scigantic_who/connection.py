@@ -96,7 +96,15 @@ def _get_base_connection(source: str) -> "duckdb.DuckDBPyConnection":
             import duckdb
 
             new_con = duckdb.connect()
-            new_con.execute("SET enable_progress_bar=false")
+            # Inside a Jupyter kernel without ipywidgets, DuckDB (1.5.5) raises
+            # InvalidInputException on ANY change to enable_progress_bar, even
+            # turning it off ("required package 'ipywidgets' is missing"). Plain
+            # Python never hits it, which is how 0.1.0 shipped with it. The
+            # setting is cosmetic; skip it rather than fail the connection.
+            try:
+                new_con.execute("SET enable_progress_bar=false")
+            except duckdb.Error:
+                pass
             if is_remote(source):
                 new_con.execute("INSTALL httpfs")
                 new_con.execute("LOAD httpfs")
