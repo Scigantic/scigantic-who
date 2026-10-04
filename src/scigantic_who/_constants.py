@@ -51,5 +51,9 @@ FLOAT_COLUMNS = ("NumericValue", "Low", "High")
 
 # Well-known codes, so callers do not have to remember WHO's spelling.
 BOTH_SEXES = "SEX_BTSX"
-ALL_AGES = "AGEGROUP_YEARSALL"
+# "All ages" is spelled three ways across indicators (measured on the 2026-10
+# mirror: AGEGROUP_AGEAll in 268k rows, AGEGROUP_YEARSALL in 56k, AGEGROUP_ALLAges
+# rarely). Look up which one your indicator uses in dimension_values; dims={"AGEGROUP":
+# ...} accepts any of them, and ALL_AGES_CODES is the full set.
+ALL_AGES_CODES = ("AGEGROUP_AGEAll", "AGEGROUP_YEARSALL", "AGEGROUP_ALLAges")
 ALL_CAUSES = "GHECAUSES_GHE000"

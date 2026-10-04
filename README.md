@@ -43,13 +43,15 @@ A GHO indicator file holds every disaggregation and every spatial level at once:
 **Pin the disaggregations by type, not by slot.** `Dim1` is a sex code for one indicator and an age group for another. `dims={"SEX": "SEX_BTSX"}` matches whichever of `Dim1`..`Dim3` carries `SEX` for this indicator.
 
 ```python
-who.data("GHE_YLLNUM", countries="BRA", years=2021,
-         dims={"SEX": who.BOTH_SEXES, "AGEGROUP": who.ALL_AGES}, decode=True)
+who.data("MORT_100", countries="NGA", years=2021,
+         dims={"SEX": who.BOTH_SEXES, "AGEGROUP": "AGEGROUP_YEARS0-4"}, decode=True)
 ```
+
+(`MORT_100` is under-five deaths by cause; the cause sits in `Dim3`.) "All ages" alone is spelled three ways across indicators (`AGEGROUP_AGEAll`, `AGEGROUP_YEARSALL`, `AGEGROUP_ALLAges`, listed in `who.ALL_AGES_CODES`), so look the right one up in `dimension_values` for your indicator.
 
 **Decode on (dimension, code), never on code alone.** The same code string can exist under different dimensions. `decode=True` and `who.decode(df)` join `dimension_values` on the pair.
 
-Two more facts worth knowing. `Value` is the published string (`48.1 [45.4-50.8]`, or a category); `NumericValue`, `Low` and `High` are the numbers. And 612 of the 3,099 catalog entries have no data behind them; `indicators()` hides them unless you ask.
+Three more facts worth knowing. The `GHE_*` burden series (DALYs, YLLs, YLDs by cause) exist in the GHO only as global and GHE-region aggregates for 2000 and 2012; WHO's country-level Global Health Estimates are a separate download the API does not carry. `Value` is the published string (`48.1 [45.4-50.8]`, or a category); `NumericValue`, `Low` and `High` are the numbers. And 612 of the 3,099 catalog entries have no data behind them; `indicators()` hides them unless you ask.
 
 ## What is in the mirror
 

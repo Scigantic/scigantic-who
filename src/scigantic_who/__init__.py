@@ -10,7 +10,7 @@
 """
 
 from . import live
-from ._constants import ALL_AGES, ALL_CAUSES, BOTH_SEXES
+from ._constants import ALL_AGES_CODES, ALL_CAUSES, BOTH_SEXES
 from .catalog import countries, dimension_values, dimensions, indicators
 from .connection import connect, manifest, query, resolve_source
 from .data import data, decode
@@ -18,7 +18,7 @@ from .data import data, decode
 __version__ = "0.1.0"
 
 __all__ = [
-    "ALL_AGES",
+    "ALL_AGES_CODES",
     "ALL_CAUSES",
     "BOTH_SEXES",
     "connect",
