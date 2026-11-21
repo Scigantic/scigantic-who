@@ -35,11 +35,11 @@ def test_live_mirror_manifest() -> None:
 
 def test_live_api_fetch_matches_mirror_shape() -> None:
     try:
-        df = who.live.fetch("TB_e_inc_num", odata_filter="SpatialDim eq 'IND'", top=5)
+        df = who.live.fetch("TB_e_inc_num", odata_filter="SpatialDim eq 'BRA'", top=5)
     except OSError as e:  # WHO's API is slow at times; a network failure is not a package bug
         pytest.skip(f"WHO API unreachable: {e}")
     assert list(df.columns) == list(who._constants.OBS_COLUMNS)
     assert len(df) == 5
     assert str(df["TimeDim"].dtype) == "Int64"
     decoded = who.decode(df, source=S3)
-    assert set(decoded["SpatialDim_name"]) == {"India"}
+    assert set(decoded["SpatialDim_name"]) == {"Brazil"}
