@@ -39,6 +39,7 @@ Homepage = "https://scigantic.com"
 Repository = "https://github.com/Scigantic/scigantic-who"
 Issues = "https://github.com/Scigantic/scigantic-who/issues"
 GHO = "https://www.who.int/data/gho"
+Documentation = "https://github.com/Scigantic/scigantic-who#readme"
 
 [project.scripts]
 scigantic-who = "scigantic_who.cli:main"
