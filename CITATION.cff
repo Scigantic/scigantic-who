@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: scigantic-who
+abstract: "Query WHO Global Health Observatory indicators from a public parquet mirror over DuckDB, decode WHO's dimension codes, or fetch an indicator from the live OData API in the same shape."
+authors:
+  - name: Scigantic
+    website: https://scigantic.com
+repository-code: https://github.com/Scigantic/scigantic-who
+url: https://pypi.org/project/scigantic-who/
+license: MIT-0
+keywords:
+  - "who"
+  - "global health observatory"
+  - "gho"
+  - "public health"
+  - "epidemiology"
+  - "health indicators"
+  - "duckdb"
+version: "0.1.1"
+date-released: '2026-10-04'
